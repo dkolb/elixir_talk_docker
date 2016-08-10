@@ -16,7 +16,7 @@ defmodule HelloWorld.Mixfile do
 
   def application do
     [
-      applications: [:cowboy, :plug, :logger],
+      applications: [:cowboy, :plug, :logger, :httpoison, :timex],
       mod: {HelloWorld, []}
     ]
   end
@@ -25,7 +25,10 @@ defmodule HelloWorld.Mixfile do
     [
      {:cowboy, "~> 1.0"},
      {:plug, "~> 1.1"},
-     {:exrm, "~> 1.0"}
+     {:exrm, "~> 1.0"},
+     {:bypass, "~> 0.5.1", only: :test},
+     {:timex, "~> 3.0"},
+     {:httpoison, "~> 0.9.0"}
     ]
   end
 
